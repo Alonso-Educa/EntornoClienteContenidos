@@ -1,0 +1,53 @@
+* {
+    padding: 0px;
+    margin: 5px;
+}
+
+body {
+    background-color: yellow;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+header {
+    padding: 20px;
+}
+
+h1 {
+    color: blue;
+}
+
+h2 {
+    color: red;
+}
+
+input[type="text"],
+input[type="date"],
+input[type="time"],
+textarea {
+    background-color: lightblue;
+}
+
+form {
+    label:not([for^="asig"]):not([for="distancia"]):not([for="presencial"]):not([for^="sexo"]) {
+        color: red;
+        font-style: italic;
+    }
+
+    label[for^="asig"] {
+        margin-left: 5px;
+    }
+
+    input[type="checkbox"] {
+        margin-left: 25px;
+    }
+}
+
+fieldset {
+    border: 1px solid black;
+}
+
+legend {
+    font-weight: bold;
+}

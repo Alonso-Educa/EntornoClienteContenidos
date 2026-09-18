@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Matricula DAW</title>
+    <link href="styles.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+    <!-- Usar header -->
+    <header>
+        <h1>CENTRO DE ESTUDIOS</h1>
+        <h2>VALLADOLID</h2>
+    </header>
+
+    <fieldset>
+        <legend>DATOS PARA LA MATR&iacute;CULA</legend>
+        <!-- target para indicar donde se abrir&aacute; la respuesta del formulario (_self o _blank), 
+            action para indicar la url donde se enviar&aacute;n los datos enviados, 
+            method para indicar metodo HTTP para enviar los datos (get o post), 
+            enctype para indicar metodo de encripci&oacute;n de los datos envidados **(para multimedia usar 'multipart/form-data')** -->
+        <form target="_blank" action="otraPagina.html" enctype="multipart/form-data">
+
+            <!-- Usar section en lugar de br -->
+            <section>
+                <label for="nombre">Nombre*:</label>
+                <input id="nombre" name="nombre" type="text" required>
+            </section>
+
+            <section>
+                <label for="apellidos">Apellidos*:</label>
+                <input id="apellidos" name="apellidos" type="text" required>
+            </section>
+
+            <section>
+                <label for="direccion">Direcci&oacute;n:</label>
+                <input id="direccion" name="direccion" type="text" placeholder="Calle, n&uacute;mero, piso, letra">
+            </section>
+
+            <section>
+                <label>Sexo:</label>
+                <input id="sexom" name="sexo" type="radio"> <label for="sexom">Hombre</label>
+                <input id="sexof" name="sexo" type="radio"> <label for="sexof">Mujer</label>
+            </section>
+
+            <section>
+                <label for="foto">Fotograf&iacute;a:</label>
+                <input id="foto" name="foto" type="file">
+            </section>
+
+            <section>
+                <label>Modalidad:</label><br>
+                <input id="distancia" name="modalidad" type="radio">
+                <label for="distancia">Distancia</label><br>
+                <input type="checkbox" id="asig1" name="asig1">
+                <label for="asig1">Lenguajes de marcas</label><br>
+                <input type="checkbox" id="asig2" name="asig2">
+                <label for="asig2">Programaci&oacute;n</label><br>
+                <input type="checkbox" id="asig3" name="asig3">
+                <label for="asig3">Bases de datos</label><br>
+                <input id="presencial" name="modalidad" type="radio">
+                <label for="presencial">Presencial</label>
+            </section>
+
+            <section>
+                <label for="cv">Curriculum vitae:</label>
+                <input id="cv" name="cv" type="file">
+            </section>
+
+            <section>
+                <label for="idioma">Idioma:</label>
+                <select id="idioma" name="idioma">
+                    <option>Ingl&eacute;s</option>
+                    <option>Espa&ntilde;ol</option>
+                    <option>Portugu&eacute;s</option>
+                    <option>Franc&eacute;s</option>
+                </select>
+            </section>
+
+            <section>
+                <label for="descripcionp">Breve descripci&oacute;n personal:</label><br>
+                <textarea id="descripcionp" name="descripcionp"
+                    placeholder="Utilice este cuadro para escribir"></textarea>
+            </section>
+
+
+            <section>
+                <label for="fecha">Fecha:</label>
+                <input id="fecha" name="fecha" type="date" value="2022-01-31">
+            </section>
+
+            <section>
+                <label for="hora">Hora:</label>
+                <input id="hora" name="hora" type="time" value="15:30">
+            </section>
+
+            <section>
+                <input type="submit" value="Enviar">
+            </section>
+
+        </form>
+    </fieldset>
+</body>
+
+</html>

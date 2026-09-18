@@ -1,0 +1,17 @@
+Lista de atajos de VS Code:
+Atajo	Utilidad
+Shift + Alt + F: Tabular texto
+Ctrl + S / Ctrl + K + S: Guardar el archivo actual / Guardar todos los archivos
+Ctrl + N / Ctrl + O: Crear nuevo archivo / Abrir archivo
+Ctrl + Ñ / Ctrl + Shift + Ñ: Abrir la terminal actual / Abrir nueva terminal
+F5: Ejecutar archivo
+    - Ctrl + Shift + F5 / Shift + F5: Reiniciar ejecución / Detener ejecución
+Ctrl + F / Ctrl + Shift + F: Buscar en el archivo / Buscar en todos los archivos
+Ctrl + P / Ctrl + Shift + P: Buscar archivos / Ejecutar un comando en el menú
+Ctrl + Z / Ctrl + Y: Deshacer / Rehacer
+Ctrl + A: Seleccionar todo
+Shift + Supr / Ctrl + Shift + K: Eliminar la línea actual
+Shift + ↑ / Shift + ↓: Seleccionar una línea hacia arriba / abajo
+Shift + Alt + ↑ / Shift + Alt + ↓: Copiar y pegar la línea actual?
+Alt + ↑ / Alt + ↓: Desplazar la línea actual arriba / abajo
+Ctrl + Space: Sugerencias de línea
