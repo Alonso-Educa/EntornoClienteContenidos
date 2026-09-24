@@ -1,0 +1,13 @@
+Jueves 17/9:
+Aprebder a usar el debug
+Continuar con la teoria
+repasar lo de esta semana
+
+Martes 22/09:
+Arreglar documento de tipos de datos
+Investigar sobre los atributos de listas y matrices
+
+Jueves 24/09:
+Terminar las funciones de arrays
+Corregir los archivos de funciones de arrays y objetos
+Hacer los archivos de funciones de strings (2) y Math

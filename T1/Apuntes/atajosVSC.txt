@@ -15,3 +15,5 @@ Shift + ↑ / Shift + ↓: Seleccionar una línea hacia arriba / abajo
 Shift + Alt + ↑ / Shift + Alt + ↓: Copiar y pegar la línea actual?
 Alt + ↑ / Alt + ↓: Desplazar la línea actual arriba / abajo
 Ctrl + Space: Sugerencias de línea
+Ctrl + Clic (sobre variable / función): Te lleva a la definición
+Ctrl + K + C / Ctrl + K + U: Comenta el fragmento seleccionado / Descomenta el fragmento seleccionado
