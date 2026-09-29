@@ -1,0 +1,74 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>Ejercicio de tablas en js</title>
+    <script>
+        "use strict";
+        function crearTabla() {
+            let filas = parseInt(document.getElementById("filas").value);
+            let columnas = parseInt(document.getElementById("columnas").value);
+
+            if (isNaN(filas) || filas <= 0) {
+                alert("Introduce un número de filas válido.");
+            } else if (isNaN(columnas) || columnas <= 0) {
+                alert("Introduce un número de columnas válido.");
+            } else {
+                // Crear tabla
+                // document.write("<table border='1'>");
+                // for (let i = 0; i < filas; i++) {
+                //     document.write("<tr>");
+                //     for (let j = 0; j < columnas; j++) {
+                //         document.write(`<th>${i},${j}</th>`);
+                //     }
+                //     document.write("</tr>");
+                // }
+                // document.write("</table>");
+                // document.close();
+
+                let s = "<table border='1'>";
+                for (let i = 0; i < filas; i++) {
+                    s += "<tr>";
+                    for (let j = 0; j < columnas; j++) {
+                        s += `<td>(${i},${j})</td>`;
+                    }
+                    s += "</tr>";
+                }
+                s += "</table>";
+
+                // Sobreescribe todo
+                // document.write(s);
+
+                // Añade la tabla al final (permite acumular tablas)
+                // document.body.insertAdjacentHTML("beforeend", s);
+
+                // Añade la tabla al final (las tablas se sobreescriben)
+                document.getElementById("tabla").innerHTML = s;
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <!-- Crear una página web que contenga un script que permita:
+            1. Introducir mediante un "prompt" el número de filas y el número de columnas de una tabla.
+            2. Crear las celdas de una tabla mediante js en las que aparezcan sus indices con el formato (i,j)
+            Para generar las celdas se puede utilizar la función document.write(, que permite insertar código html en la propia página.-->
+
+    <h1>Generador de tablas</h1>
+
+    <section>
+        <label for="filas">Filas:</label>
+        <input type="text" id="filas" name="filas" />
+    </section>
+    <section>
+        <label for="columnas">Columnas:</label>
+        <input type="text" id="columnas" name="columnas" />
+    </section>
+    <button type="button" onclick="crearTabla()">Generar tabla</button>
+
+    <!-- div para que la tabla se meta al final en vez de sobreescribir el documento -->
+    <div id="tabla"></div>
+</body>
+
+</html>
