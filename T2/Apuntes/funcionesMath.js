@@ -1,17 +1,19 @@
+"use strict";
+
 // 1. Math.PI: Propiedad con el numero pi
 console.log("\n1. Math.PI:");
-console.log("Valor de pi -> " + Math.PI);  
+console.log("Valor de pi -> " + Math.PI);
 console.log("Pi con 2 decimales -> " + Math.PI.toFixed(2));
 
 // 2. Math.E: Propiedad con el numero e
 console.log("\n2. Math.E:");
-console.log("Valor de e -> " + Math.E); 
-console.log("E con 2 decimales -> " + Math.E.toFixed(2)); 
+console.log("Valor de e -> " + Math.E);
+console.log("E con 2 decimales -> " + Math.E.toFixed(2));
 
 // 3. Math.abs(): Devuelve el valor absoluto de un número
 console.log("\n3. Math.abs():");
 let numero = -7.5;
-console.log("Valor absoluto de " + numero + " -> " + Math.abs(numero)); 
+console.log("Valor absoluto de " + numero + " -> " + Math.abs(numero));
 console.log("Valor absoluto de 7 -> " + Math.abs(7));
 
 // 4. Math.sin()/cos()/tan(): Seno, coseno y tangente
@@ -67,4 +69,6 @@ console.log("Raiz cuadrada de -1 -> " + Math.sqrt(-1));
 // 13. Math.random(): Devuelve un número aleatorio entre 0 y 1
 console.log("\n13. Math.random():");
 console.log("Numero aleatorio entre 0 y 1 -> " + Math.random());
-console.log("Entero aleatorio entre 1 y 10 -> " + (Math.floor(Math.random() * 10) + 1));
+console.log(
+  "Entero aleatorio entre 1 y 10 -> " + (Math.floor(Math.random() * 10) + 1),
+);

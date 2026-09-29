@@ -1,3 +1,5 @@
+"use strict";
+
 // Control de flujo
 // If/else
 // switch

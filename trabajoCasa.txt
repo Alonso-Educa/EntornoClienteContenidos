@@ -11,3 +11,6 @@ Jueves 24/09:
 Terminar las funciones de arrays
 Corregir los archivos de funciones de arrays y objetos
 Hacer los archivos de funciones de strings (2) y Math
+
+Martes 29/09:
+Hacer ej.html y corregir código de funcionesDate y templateStrings

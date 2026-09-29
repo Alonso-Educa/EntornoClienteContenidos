@@ -1,3 +1,5 @@
+"use strict";
+
 // 1. Length: Devuelve la longitud de una variable
 console.log("\n1. Length:");
 let n = 1;
