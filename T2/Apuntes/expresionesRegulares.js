@@ -21,8 +21,35 @@ console.log(/[u-v]/.test('hola mundo')); // verdadero porque contiene un valor e
 console.log("\nNuevas comprobaciones:");
 console.log(/ /.test('hola mundo')); //verdadero porque hay un espacio
 console.log(/hola$/.test('hola mundo')); // falso porque no acaba por hola
-console.log(/[a-z]/.test('1234567890'));
-console.log(/[^a-zA-Z0-9]/.test('1234567890a'));
-console.log(/[^a-zA-Z0-9$]/.test('1234567890.')); // verdadero porque acaba en un caracter no numérico ni letra (el $ se comporta igual dentro y fuera del rango)
-console.log(/^[^A-Z]/.test('HOLA MUNDO')); // falso porque no empieza por un caracter diferne
-console.log(/[^a-d]/.test('abcd')); //
+console.log(/[a-z]/.test('1234567890')); // falso porque no tiene ninguna letra minúsula
+console.log(/[^a-zA-Z0-9]/.test('1234567890a')); // falso porque no empieza por ningún caracter que no sea numérico o letra
+console.log(/[^a-zA-Z0-9$]/.test('1234567890.')); // verdadero porque acaba en un caracter no numérico ni letra (el $ se comporta como un caracter literal dentro)
+console.log(/^[^A-Z]/.test('HOLA MUNDO')); // falso porque no empieza por un caracter difernte
+console.log(/[^a-d]/.test('abcd')); // falso porque no contiene ningún caracter que no sean minúsculas
+
+// \d representa un digito cualquiera, equivale a [0-9]
+// \D representa un caracter que no es un digito, equivale a [^0-9]
+// \w representa una letra, un digito o '_', equivale a [A-Za-z0-9_]
+// \W representa un caracter que no es letra, digito ni '_', equivale a [^A-Za-z0-9_]
+// \s representa un espacio en blanco (espacio, tabulador, salto de linea...)
+// \S representa un caracter que no es un espacio en blanco
+// \n representa un salto de linea
+
+console.log("\nNuevas comprobaciones 2:");
+console.log(/\d/.test('hola 2026')); // verdadero porque contiene un digito
+console.log(/\d/.test('hola mundo')); // falso porque no hay ningun digito
+console.log(/\D/.test('12345')); // falso porque todos son digitos
+console.log(/\D/.test('123a45')); // verdadero porque la 'a' no es un digito
+console.log(/\w/.test('!!!')); // falso porque no hay letras, digitos ni '_'
+console.log(/^\w*$/.test('hola_123')); // verdadero porque todos son letras, digitos o '_'
+console.log(/\W/.test('hola mundo')); // verdadero porque el espacio no es de tipo \w
+console.log(/\W/.test('hola_mundo')); // falso porque '_' si es de tipo \w
+console.log(/\s/.test('hola mundo')); // verdadero porque hay un espacio
+console.log(/\s/.test('holamundo')); // falso porque no hay espacios
+console.log(/\S/.test('   ')); // falso porque solo hay espacios
+console.log(/\S/.test('  a  ')); // verdadero porque la 'a'  no es un espacio
+console.log(/\n/.test('hola\nmundo')); // verdadero porque hay un salto de linea
+console.log(/\n/.test('hola mundo')); // falso porque no hay salto de linea
+console.log(/^.$/.test('a')); // verdadero porque es un unico caracter cualquiera
+console.log(/^.$/.test('ab')); // falso porque hay dos caracteres y '.' solo representa uno
+console.log(/^.$/.test('\n')); // falso porque '.' no representa el salto de linea
