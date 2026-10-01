@@ -18,3 +18,7 @@ Hacer ej.html y corregir código de funcionesDate y templateStrings
 Miercoles 30/09:
 Arreglar y corregir ej2
 Hacer pruebas regex con \d\D\w\W\s\S\ \n .
+
+Jueves 01/10:
+Corregir y repasar ejercicios de regex
+Hacer ejercicio de regex de laura
