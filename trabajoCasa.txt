@@ -20,4 +20,5 @@ Arreglar y corregir ej2
 Hacer pruebas regex con \d\D\w\W\s\S\ \n .
 
 Jueves 01/10:
-Hacer ejercicio de repaso de regex
+Corregir y repasar ejercicios de regex
+Hacer ejercicio de regex de repaso
