@@ -1,5 +1,7 @@
 "use strict";
 
+// Corregir 
+
 // Solo cambia si es un array/objeto porque se accede al objeto en la memoria
 // referencia en memoria obj vs variable
 

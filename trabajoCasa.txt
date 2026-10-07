@@ -22,3 +22,6 @@ Hacer pruebas regex con \d\D\w\W\s\S\ \n .
 Jueves 01/10:
 Corregir y repasar ejercicios de regex
 Hacer ejercicio de regex de repaso
+
+Miércoles 07/10:
+Terminar ejercicios de repaso para casa
