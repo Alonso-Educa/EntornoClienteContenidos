@@ -2,7 +2,7 @@
 
 // Calcular el día de la semana de tus próximos 5 cumpleaños
 console.log("\nCalcular el día de la semana de tus próximos 5 cumpleaños:");
-let anio=2026;
+const anio=2026;
 for(let i=0; i<5; i++){
     let cumple = new Date(`${anio+i}-11-22`);
     // console.log(`Día de 22/11/${anio++}: ${cumple.getDay()}`); // devuelve índice numérico de la semana: [0-7]
