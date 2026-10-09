@@ -17,7 +17,7 @@ if (f1 > f2) {
 }
 
 let anio = f2.getUTCFullYear() - f1.getUTCFullYear();
-let mes = f2.getUTCMonth() - f1.getUTCMonth();
+let mes = f2.getUTCMonth() - f1.getUTCMonth()+1;
 let dia = f2.getUTCDate() - f1.getUTCDate();
 
 if (dia < 0) {
@@ -28,6 +28,7 @@ if (dia < 0) {
   anio--;
 }
 
+console.log("Forma 1: Diferencia entre datos de la fecha");
 console.log("Fecha 1: " + f1);
 console.log("Fecha 2: " + f2);
 console.log(
@@ -37,5 +38,24 @@ console.log(
     Math.floor(mes) +
     " meses y " +
     dia +
+    " dias.",
+);
+
+// diferencia de ms y luego convertir a años, meses y dias
+console.log("\nForma 2: Diferencia de fechas en ms y conversión de datos");
+
+let anio2=(f2-f1)/(1000*3600*24*365.25); // de ms a años
+let mes2=(anio2-Math.floor(anio2))*12 +1; // meses = resto de años * cantidad de meses
+let dia2=Math.floor((mes2-Math.floor(mes2))*30); // dias = resto de meses * cantidad de dias por mes
+
+console.log("Fecha 1: " + f1);
+console.log("Fecha 2: " + f2);
+console.log(
+  "Entre la fecha 1 y la fecha 2 han pasado " +
+    Math.floor(anio2) +
+    " años, " +
+    Math.floor(mes2) +
+    " meses y " +
+    dia2 +
     " dias.",
 );
