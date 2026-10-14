@@ -31,7 +31,7 @@ console.log("Mapa: " + mapa); // no devueve los valores
 console.log(mapa); // devuelve tamaño y pares clave-valor (como un entries)
 // values(): Devuelve los valores del mapa
 console.log(mapa.values());
-// values(): Devuelve las claves del mapa
+// keys(): Devuelve las claves del mapa
 console.log(mapa.keys());
 // entries(): Devuelve un conjunto de matrices clave-valor
 console.log(mapa.entries());
@@ -41,3 +41,17 @@ mapa.clear();
 console.log(mapa);
 
 // Diferencia entre values, keys y entries
+
+// Iterar con for of
+for (var [clave, valor] of mapa2) {
+  console.log(clave + " = " + valor);
+}
+
+// For-in: No imprime nada. Solo sirve para iterar sobre un array
+for (const clave in mapa2.keys()) {
+  console.log(clave);
+}
+
+for (const valor in mapa2.values()) {
+  console.log(valor);
+}
