@@ -173,3 +173,77 @@ console.log("Copia2: " + copia3);
 // Corregir
 // Por esto no se pueden asignar variables de esta forma, se asigna también la dirección de memoria
 // asignar con [...values]???
+
+// Operador spread con objetos. 
+// Se permite usar el operador para crear objetos pero no para llamadas a funciones
+console.log("");
+const persona = { nombre: "pepe", edad: 27 };
+const cliente = { ventas: 120, ...persona };
+console.log(persona);
+console.log(cliente);
+persona.nombre = "Laura";
+console.log(persona);
+console.log(cliente); // no se modifican los datos al cambiar el original
+let cliente2 = persona; // al usar el operador de asignación, se pasa por referencia el original en lugar de crear una copia
+persona.nombre = "Alberto";
+console.log(persona);
+console.log(cliente2);
+// let cliente2 = ...persona; // No lo permite la sintaxis
+// let cliente2 = [...persona] // así sí funciona
+// const copiaCliente = { ...cliente };
+// console.log(copiaCliente);
+
+// Funciones flecha o arrow functions
+// Sintaxis: parametro => codigo / (parametros) => {codigo}
+// Si ocupa una linea no necesita return, si solo tiene un parametro no necesita parentesis
+console.log("");
+let saludo1 = function () {
+    return "Hola";
+}
+let saludo2 = () => "Hola";
+// let saludo2=() => {return "Hola"}; // Lo mismo
+console.log(saludo1());
+console.log(saludo2());
+
+let saludo3 = function (nombre) {
+    return `Hola ${nombre}`;
+}
+let saludo4 = nombre => `Hola ${nombre}`;
+// let saludo4 = (nombre) => { `Hola ${nombre}`; } // lo mismo
+console.log(saludo3("Laura"));
+console.log(saludo4("Laura"));
+
+let saludo5 = function (nombre, apellido) {
+    return `Hola ${nombre} ${apellido}`;
+}
+let saludo6 = (nombre, apellido) => {
+    return `Hola ${nombre} ${apellido}`;
+}
+console.log(saludo5("Laura", "Perez"));
+console.log(saludo6("Laura", "Perez"));
+
+console.log("");
+let esVocal = caracter => {
+    if (/^[aeiouAIEOU]$/.test(caracter)) {
+        return "Es una vocal";
+    } else {
+        return "No es una vocal";
+    }
+}
+console.log(esVocal('a'));
+console.log(esVocal('A'));
+console.log(esVocal('c'));
+console.log(esVocal('1'));
+console.log("");
+
+// Funciones que devuelven iteradores a partir de un array
+// Al terminar, el puntero no vuelve al inicio
+// Ej: keys(), values() o entries()
+
+let t1=['a','b','c'];
+let k=t1.keys();
+for (const e of k) 
+    console.log(e); // 0 1 2
+
+for (const e of k) 
+    console.log(e); // No devuelve nada porque ya había llegado al final antes
