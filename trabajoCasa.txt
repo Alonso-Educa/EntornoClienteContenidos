@@ -32,4 +32,5 @@ Terminar ejercicios 72 y 79 para casa
 Miercoles 14/10:
 Corregir ejercicios de clase
 
-JuevesEntender reduce y terminar funciones flecha
+Jueves 15/10:
+Entender reduce() y terminar funciones flecha
