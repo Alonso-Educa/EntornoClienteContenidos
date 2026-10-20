@@ -34,3 +34,6 @@ Corregir ejercicios de clase
 
 Jueves 15/10:
 Entender reduce() y terminar funciones flecha
+
+Martes 20/10:
+Hacer funciones flecha aula virtual (devolver != visualizar)

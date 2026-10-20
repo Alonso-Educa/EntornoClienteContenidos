@@ -240,10 +240,10 @@ console.log("");
 // Al terminar, el puntero no vuelve al inicio
 // Ej: keys(), values() o entries()
 
-let t1=['a','b','c'];
-let k=t1.keys();
-for (const e of k) 
+let t1 = ['a', 'b', 'c'];
+let k = t1.keys();
+for (const e of k)
     console.log(e); // 0 1 2
 
-for (const e of k) 
+for (const e of k)
     console.log(e); // No devuelve nada porque ya había llegado al final antes
