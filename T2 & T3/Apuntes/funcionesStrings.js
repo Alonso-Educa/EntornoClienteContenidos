@@ -33,7 +33,7 @@ for (let i = 0; i < persona.length; i++) {
     "Valor unicode del caracter " +
       persona.charAt(i) +
       ": " +
-      charCodeAt(persona.charAt(i)),
+      persona.charCodeAt(i),
   );
 }
 
@@ -52,20 +52,24 @@ console.log(cadena.lastIndexOf("5"));
 console.log("\n7. substr(i,f)");
 cadena = "cadenamuylargaparasplit";
 console.log("Cadena original: " + cadena);
-console.log("Substring [1,3]: " + cadena.substring(1, 7));
+console.log("Substring [1,7]: " + cadena.substring(1, 7));
+console.log("Substr [1,7]: " + cadena.substr(1, 7));
 console.log("Substring [3]: " + cadena.substring(3));
+console.log("Substr [3]: " + cadena.substr(3));
 console.log("Substring [2,-2]: " + cadena.substring(2, -2));
+console.log("Substr [2,-2]: " + cadena.substr(2, -2));
 
 // 8. toLowerCase(): Convierte la cadena a minúsculas
 console.log("\n8. toLowerCase():");
 cadena = "HOLAENMAYUSCULAS";
 console.log("Cadena original: " + cadena);
-console.log("Cadena en minúsculas: " + cadena.toLowerCase);
+console.log("Cadena en minúsculas: " + cadena.toLowerCase());
 
 // 9. toUpperCase(): Convierte la cadena a mayúsculas
 console.log("\n9. toUpperCase():");
+cadena = "holaenminusculas";
 console.log("Cadena original: " + cadena);
-console.log("Cadena en mayúsculas: " + cadena.toUpperCase);
+console.log("Cadena en mayúsculas: " + cadena.toUpperCase());
 
 // 10. split(c): Divide una cadena en subcadenas separadas por el caracter
 // introducido y las devuelve en un array
