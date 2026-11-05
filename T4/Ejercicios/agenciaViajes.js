@@ -22,9 +22,9 @@ const AGENCIA4 = new AgenciaViaje("Lima", "Peru", 410, 5, 4.4, ["cultura", "gast
 const AGENCIA5 = new AgenciaViaje("oporto", "portugal", 750, 7, 10.9, ["playa", "romántico", "relax"], true, "https://ejemplo.com/oporto.jpg");
 
 // Pruebas
-AGENCIA1.reservar();                  // Viaje a Roma (Italia) reservado por 450€
-console.log(AGENCIA2.toString());     // ROMA | Italia | 5 días | 450€
-console.log(`${AGENCIA5}`);      // DUBROVNIK | Croacia | 6 días | 580€
+AGENCIA1.reservar();
+console.log(AGENCIA2.toString());
+console.log(`${AGENCIA5}`);
 
 
 console.log("\nParte 2:");
@@ -113,7 +113,7 @@ console.log(buscarPorPais("Albania", catalogo) !== undefined ? "Hay viajes a Alb
 console.log("\nParte 8:");
 // generarCodigo: ej. ROM-IT-05
 let generarCodigo = ({ ciudad, pais, dias }) =>
-    `${ciudad.slice(0, 3).toUpperCase()}-${pais.slice(0, 2).toUpperCase()}-${String(dias).padStart(2, "0")}`;
+    `${ciudad.slice(0, 3).toUpperCase()}-${pais.slice(0, 2).toUpperCase()}-${dias.padStart(2, "0")}`;
 console.log("generarCodigo():");
 console.log(generarCodigo(AGENCIA1));       // ROM-IT-05
 console.log(generarCodigo(AGENCIA2));  // DUB-CR-06
@@ -169,8 +169,6 @@ const resumenPorPais = catalogo =>
         conteo[pais] = (conteo[pais] || 0) + 1;
         return conteo;
     }, {});
-
-// ---------- PRUEBAS ----------
 
 
 // cancelarDestino (uso una copia para no estropear el catálogo de las demás pruebas)

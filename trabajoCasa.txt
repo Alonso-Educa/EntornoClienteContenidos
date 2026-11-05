@@ -37,3 +37,7 @@ Entender reduce() y terminar funciones flecha
 
 Martes 20/10:
 Hacer funciones flecha aula virtual (devolver != visualizar)
+
+Jueves 05/11:
+Corregir ejercicio de agencia de viajes y ej2
+Hacer ej3
