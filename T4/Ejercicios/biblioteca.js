@@ -4,7 +4,7 @@ console.log("Parte 1:");
 
 const LIBRO1 = {
     nombre: "Las aventuras de Alonso", color: "rojo", autor: "Alonso", n_paginas: 100,
-    editorial: "Universidad de Valladolid", forrado: true, url_cover: "https://google.com",
+    editorial: "Universidad de Valladolid", forrado: false, url_cover: "https://google.com",
     comprar: function () { console.log(`Libro de aventuras ${this.nombre} del autor ${this.autor} comprado.`); },
     toString: function () { return `${this.nombre}-${this.autor}(${this.n_paginas})**${this.forrado}`; }
 
@@ -81,3 +81,41 @@ let checkLibro3 = (b, l) => b.filter(valor => valor.nombre == l.nombre).map(valo
 console.log("Versión de Nico - checkLibro3():");
 console.log(checkLibro3(biblioteca, LIBRO1));
 console.log(checkLibro3(biblioteca, LIBRO3));
+
+console.log("\nParte 5:");
+let biblioteca2 = [...biblioteca, LIBRO3];
+console.log(biblioteca2.toString());
+
+console.log("\nParte 6:");
+let librosLargos = biblioteca2.filter(libro => checkPages(libro));
+console.log(librosLargos.toString());
+
+console.log("\nParte 7:");
+console.log("checkAutor():");
+let checkAutor = (autor, biblioteca) => biblioteca.find(libro => libro.autor == autor) !== undefined;
+console.log(checkAutor(LIBRO3.autor, biblioteca));
+console.log(checkAutor(LIBRO3.autor, biblioteca2));
+console.log(checkAutor("Tolkien", biblioteca2) ? "Hay libros de Tolkien" : "No hay libros de Tolkien");
+
+console.log("forraLibro():");
+let forraLibro = biblioteca => biblioteca.forEach(libro => libro.forrado = true);
+forraLibro(biblioteca);
+console.log(biblioteca.toString());
+
+console.log("prestarLibro():");
+// sin findindex: let prestarLibro = (biblioteca, titulo) => biblioteca.filter(libro => libro.titulo != titulo);
+let prestarLibro = (biblioteca, titulo) => {
+    let indice = biblioteca.findIndex(libro => libro.titulo == titulo);
+
+    // si no existe se queda igual, sino se borra el valor usando splice
+    if (indice !== -1) {
+        biblioteca.splice(indice, 1);
+    }
+};
+prestarLibro(biblioteca, LIBRO1.titulo);
+console.log(biblioteca.toString());
+
+console.log("devolverLibro():");
+let devolverLibro = (biblioteca, libro) => biblioteca.push(libro);
+devolverLibro(biblioteca, LIBRO1);
+console.log(biblioteca.toString());
