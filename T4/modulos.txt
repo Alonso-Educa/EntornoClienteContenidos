@@ -1,0 +1,3 @@
+Usar export para exportar la clase
+Usar import con el nombre de archivo para importar la clase
+Descargar la extensión Live Server para

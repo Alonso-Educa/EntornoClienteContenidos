@@ -1,60 +1,8 @@
 "use strict";
 
-// clase Vehiculo con atributo privado pasajeros y su getter/setter
-class Vehiculo {
-
-    #pasajeros;
-
-    constructor(pasajeros) {
-        this.#pasajeros = pasajeros;
-    }
-
-    set pasajeros(valor) {
-        this.#pasajeros = valor;
-    }
-
-    get pasajeros() {
-        return this.#pasajeros;
-    }
-}
-
-// clase Turismo hija de Vehiculo con atributo privado color y su getter/setter
-class Turismo extends Vehiculo {
-
-    #color;
-
-    constructor(pasajeros, color) {
-        super(pasajeros);
-        this.#color = color;
-    }
-
-    set color(valor) {
-        this.#color = valor;
-    }
-
-    get color() {
-        return this.#color;
-    }
-}
-
-// clase Camion hija de Vehiculo con atributo privado tara y su getter/setter
-class Camion extends Vehiculo {
-
-    #tara;
-
-    constructor(pasajeros, tara) {
-        super(pasajeros);
-        this.#tara = tara;
-    }
-
-    set tara(valor) {
-        this.#tara = valor;
-    }
-
-    get tara() {
-        return this.#tara;
-    }
-}
+// instalar extension Live Server para que funcione
+import { Turismo } from "./Turismo.js";
+import { Camion } from "./Camion.js";
 
 // funcion que devuelve el tiempo actual en formato hh:mm:ss
 function capturaReloj() {
@@ -90,12 +38,12 @@ function mostrarVehiculos() {
 
         document.write(`<td>Tipo: ${vehiculo instanceof Turismo ? "Turismo" : "Camion"}</td>`);
         
-        document.write(`<td>Pasajeros: ${vehiculo.pasajeros}</td>`);
+        document.write(`<td>Pasajeros: ${vehiculo.Pasajeros}</td>`);
 
         if (vehiculo instanceof Turismo) {
-            document.write(`<td bgcolor="${vehiculo.color}">Color: ${vehiculo.color}</td>`);
+            document.write(`<td bgcolor="${vehiculo.Color}">Color: ${vehiculo.Color}</td>`);
         } else {
-            document.write(`<td>Tara: ${vehiculo.tara}</td>`);
+            document.write(`<td>Tara: ${vehiculo.Tara}</td>`);
         }
 
         document.write("</tr>");
