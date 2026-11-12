@@ -41,3 +41,7 @@ Hacer funciones flecha aula virtual (devolver != visualizar)
 Jueves 05/11:
 Corregir ejercicio de agencia de viajes y ej2
 Hacer ej3
+
+Jueves 12/11:
+Terminar apuntes de estructuracion
+Hacer ej4
