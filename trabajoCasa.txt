@@ -45,3 +45,6 @@ Hacer ej3
 Jueves 12/11:
 Terminar apuntes de estructuracion
 Hacer ej4
+
+Martes 17/11:
+Terminar y corregir prueba3
