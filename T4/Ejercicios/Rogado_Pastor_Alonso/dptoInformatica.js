@@ -29,10 +29,7 @@ export class DptoInformatica {
         return 'Equipo desconocido';
     }
 
-    // getNEquipos() {
-    //     let n=0;
-    //     for (const aula in this.#aulas.values()) {
-    //         aula.Puestos
-    //     }
-    // }
+    getNEquipos() {
+        return this.#aulas.values().reduce((ac,aula) => ac+aula.Puestos, 0);
+    }
 }
