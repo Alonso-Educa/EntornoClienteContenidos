@@ -1,8 +1,10 @@
 "use strict";
-document.open();
+
 import { EstacionM } from "./EstacionM.js";
 
 let estacionm = new EstacionM();
+
+document.open();
 estacionm.insertarCiudad("Valladolid");
 estacionm.insertarCiudad("Oviedo");
 estacionm.insertarCiudad("Santander");
