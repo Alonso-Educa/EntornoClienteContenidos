@@ -36,20 +36,31 @@ asignaciones.forEach((asignacion) => {
 function datosPortatiles() {
     console.log("%cACTIVANDO PORTÁTILES QUE SE VAN A USAR...", 'background: #222; color: #bada55');
 
-    let aulaNueva = "";
+    let entrada;
     do {
-        aulaNueva = prompt(
-            "Introduce el aula destino, descripción, filas, columnas y número de días separados por comas",
+        entrada = prompt(
+            "Aula, descripción, fila, columna y días separados por comas (S para salir)",
             "220,Portátil FP Básica 2-1,2,1,30"
         );
 
-        const datos = aulaNueva.trim().split(',');
-        if (datos.length == 5) {
-            const [aulaDestino, descripcion, filas, columnas, dias] = datos;
-            const aula = new Aula(aulaDestino, filas, columnas);
-            const equipo = new Equipo(descripcion, false, dias);
+        if (entrada !== null && entrada.trim().toLowerCase() !== "s") {
+            const [numAula, descripcion, fila, columna, dias] = entrada.split(",");
+
+            const aula = dptoNaranco.Aulas.get(numAula.trim()) ? dptoNaranco.Aulas.get(numAula.trim()).aula : undefined;
+            if (!aula) {
+                console.log("El aula no existe");
+            } else {
+                const portatil = new Equipo(descripcion.trim(), true, parseInt(dias));
+                if (aula.activaEquipo(portatil, parseInt(fila), parseInt(columna))) {
+                    console.log(`Equipo portátil ${portatil} añadido correctamente en Aula número: ${numAula} *** Fila: ${fila} - Columna: ${columna}`);
+                    console.table(aula.Equipos);
+                    console.log(`Porcentaje de ocupación aula ${numAula}:${aula.getPorcentajeOcupacion()}%`);
+                } else {
+                    console.log("No se ha podido añadir el portátil");
+                }
+            }
         }
-    } while (aulaNueva.toLowerCase() != 's');
+    } while (entrada !== null && entrada.trim().toLowerCase() !== "s");
 }
 
 datosPortatiles(); //Pendiente de implementar

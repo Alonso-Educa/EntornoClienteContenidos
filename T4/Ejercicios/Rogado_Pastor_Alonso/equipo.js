@@ -9,34 +9,35 @@ export class Equipo {
     constructor(descripcion, personal, dias = 0) {
         this.#descripcion = descripcion;
         this.#personal = personal;
-        dias == 0 ? this.#fecha = new Date("06-30-2027") : this.#fecha = new Date(new Date("2026-09-01").getTime() + (dias * 24 * 3600 * 1000));
-        this.#id = `${this.#personal == true ? 'P' : 'S'}-${this.#descripcion.slice(-3)}-${this.#fecha.getDay()}-${this.#fecha.getMonth() + 1}-${this.#fecha.getFullYear()}`;
+        dias == 0 ? this.#fecha = new Date("2027-06-30") : this.#fecha = new Date(new Date("2026-09-01").getTime() + (dias * 24 * 3600 * 1000));
+        this.#setId();
     }
 
     // getters y setters?
-    get Fecha(){
+    get Fecha() {
         return this.#fecha;
     }
-    get Descripcion(){
+    get Descripcion() {
         return this.#descripcion;
     }
-    get Personal(){
+    get Personal() {
         return this.#personal;
     }
 
-    set Descripcion(descripcion){
-        this.#descripcion=descripcion;
-        this.#id = `${this.#personal == true ? 'P' : 'S'}-${this.#descripcion.slice(-3)}-${this.#fecha.getDay()}-${this.#fecha.getMonth() + 1}-${this.#fecha.getFullYear()}`;
+    set Descripcion(descripcion) {
+        this.#descripcion = descripcion;
+        this.#setId();
     }
-
-    set Fecha(dias){
+    set Fecha(dias) {
         dias == 0 ? this.#fecha = new Date("06-30-2027") : this.#fecha = new Date(new Date("2026-09-01").getTime() + (dias * 24 * 3600 * 1000));
-        this.#id = `${this.#personal == true ? 'P' : 'S'}-${this.#descripcion.slice(-3)}-${this.#fecha.getDay()}-${this.#fecha.getMonth() + 1}-${this.#fecha.getFullYear()}`;
+        this.#setId();
     }
-
-    set Personal(personal){
-        this.#personal=personal;
-        this.#id = `${this.#personal == true ? 'P' : 'S'}-${this.#descripcion.slice(-3)}-${this.#fecha.getDay()}-${this.#fecha.getMonth() + 1}-${this.#fecha.getFullYear()}`;
+    set Personal(personal) {
+        this.#personal = personal;
+        this.#setId();
+    }
+    #setId() {
+        this.#id = `${this.#personal == true ? 'P' : 'S'}-${this.#descripcion.slice(-3)}-${this.#fecha.getDate()}-${this.#fecha.getMonth() + 1}-${this.#fecha.getFullYear()}`;
     }
 
     toString() {

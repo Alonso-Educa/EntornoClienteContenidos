@@ -1,7 +1,5 @@
 "use strict";
 
-import { Equipo } from "./equipo.js";
-
 export class Aula {
 
     #numero;
@@ -10,7 +8,10 @@ export class Aula {
 
     constructor(numero, filas, columnas) {
         this.#numero = numero;
-        this.#equipos = new Array(filas).fill(new Array(columnas).fill(null));
+        this.#equipos = [];
+        for (let i = 0; i < filas; i++) {
+            this.#equipos[i] = new Array(columnas).fill(null);
+        }
         this.#puestos = filas * columnas;
     }
 
@@ -29,26 +30,27 @@ export class Aula {
     }
 
     activaEquipo(equipo, fila, columna) {
-        if ((this.#equipos.length < fila || this.#equipos[fila].length < columna) && !equipo.personal) {
+        if ((this.#equipos.length <= fila || this.#equipos[fila].length <= columna) && !equipo.Personal) {
             return false;
-        } else if (this.#equipos.length < fila && equipo.personal) {
+        } else if (this.#equipos.length <= fila && equipo.Personal) {
             return false;
         } else {
-            this.#equipos[fila][columna] = equipo;
+            if (equipo.Personal) {
+                // desplaza el resto de equipos 
+                this.#equipos[fila].splice(columna, 0, equipo);
+            } else {
+                this.#equipos[fila][columna] = equipo;
+            }
+            return true;
         }
     }
 
     getPosicion(idEquipo) {
-        let filas = 0, columnas = 0;
-        this.#equipos.forEach(fila => {
-            filas++;
-            fila.forEach(equipo => {
-                columnas++;
-                if (equipo.Id == idEquipo) {
-                    return [filas, columnas];
-                }
-            })
-        });
+        for (let f = 0; f < this.#equipos.length; f++) {
+            for (let c = 0; c < this.#equipos[f].length; c++) {
+                if (this.#equipos[f][c]?.toString() === idEquipo) return [f, c];
+            }
+        }
         return null;
     }
 
@@ -58,6 +60,6 @@ export class Aula {
                 return ac2 + (equipo != null ? 1 : 0);
             }, 0)
         }, 0);
-        return Math.round(totalOcupacion / this.#puestos);
+        return Math.round((totalOcupacion / this.#puestos) * 100);
     }
 }
