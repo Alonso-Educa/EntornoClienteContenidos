@@ -48,3 +48,6 @@ Hacer ej4
 
 Martes 17/11:
 Terminar y corregir prueba3
+
+Jueves 19/11:
+Terminar repaso funciones

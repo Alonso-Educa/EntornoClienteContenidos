@@ -6,10 +6,10 @@ export class Equipo {
     #descripcion;
     #personal; // true portatil, false sobremesa
 
-    constructor(descripcion, personal, dias = 0) {
+    constructor(descripcion, personal, dias = -1) {
         this.#descripcion = descripcion;
         this.#personal = personal;
-        dias == 0 ? this.#fecha = new Date("2027-06-30") : this.#fecha = new Date(new Date("2026-09-01").getTime() + (dias * 24 * 3600 * 1000));
+        dias == -1 ? this.#fecha = new Date("2027-06-30") : this.#fecha = new Date(new Date("2026-09-01").getTime() + (dias * 24 * 3600 * 1000));
         this.#setId();
     }
 
