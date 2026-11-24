@@ -71,3 +71,25 @@ const persona3 = {
     amigas: ["Annie", "Becky"]
 };
 
+const { nombre: foo, lugar: { pais: bar, ciudad: x } } = persona3;
+console.log(foo, bar, x);
+const { lugar: { ciudad } } = persona3;
+console.log(ciudad);
+const { amigas: [primera] } = persona3;
+console.log(primera);
+
+const persona4 = {
+    nombre: 'Pedro',
+    domicilio: 'C/ Mayor 1',
+    pais: 'España'
+}
+
+function visualizarDatos1(obj) {
+    console.log(obj);
+}
+
+function visualizarDatos2({ nombre, domicilio }) {
+    console.log(nombre + " --- " + domicilio);
+}
+visualizarDatos1(persona4);
+visualizarDatos2(persona4);
