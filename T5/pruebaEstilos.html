@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Repaso de estilos</title>
+    <link rel="stylesheet" type="text/css" href="repasoEstilos.css">
+</head>
+
+<body>
+    <h1>Repaso de selectores</h1>
+    <!-- span es elemento de linea, ocupa solo el espacio del elemento -->
+    <span>Hola</span><span>Laura</span>
+    <!-- p es elemento de bloque, ocupa todo el bloque entero -->
+    <p>Adiós Laura</p>
+
+    <!-- Página para repasar: https://www.mclibre.org/consultar/htmlcss/ -->
+    <a href="https://www.mclibre.org/consultar/htmlcss/">Página de repaso</a>
+
+    <!-- Mostrar video con iframe-->
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/ajmd8J0Uf0Q?si=8b8pud9WAZrQDoSn"
+        title="YouTube video player" frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+    <!-- También se pueden mostrar mapas -->
+    <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2982.1034738045896!2d-4.761314223447746!3d41.63189478079303!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd476d0f92291693%3A0xdc3a18387e63bc0d!2zSUVTIEp1bGnDoW4gTWFyw61hcw!5e0!3m2!1ses!2ses!4v1795682544129!5m2!1ses!2ses"
+        width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+        referrerpolicy="strict-origin-when-cross-origin"></iframe>
+
+    <!-- input y label son elementos en línea -->
+    <!-- section y div son elementos en bloque -->
+    <form action="ejemplo.php" method="get" enctype="multipart/form-data">
+        <div><label for="nombre">Nombre:</label><input type="text" id="nombre" name="nombre" size="40"></div>
+        <section>Año de nacimiento:<input type="number" name="nacido" min="1900"></section>
+        <label for="hm" id="hm">Sexo:</label>
+        <input type="radio" name="hm" value="h">Hombre
+        <input type="radio" name="hm" value="m">Mujer
+
+        <label for="archivo">Enviar archivo:</label><input type="file" id="archivo" name="archivo">
+
+        <!-- se muestra pero no se ve debido a visibility hidden -->
+        <progress class="esconder">Progreso</progress>
+        <!-- display none está activado así que no se muestra directamente -->
+        <progress class="oculto">Progreso</progress>
+
+        <!-- hidden no se muestra tampoco -->
+        <input type="hidden" value="oculto">
+
+        <!-- en input type submit solo se puede meter texto en value-->
+        <!-- en un button submit se puede personalizar más y meter más cosas dentro -->
+        <input type="submit" value="Enviar">
+        <input type="reset" value="Hola">
+        <input type="submit" value="&#x2b50; Enviar">
+        <button type="submit">
+            <img src="https://cdn-icons-png.flaticon.com/512/1033/1033956.png" alt="imagen no disponible" width="32"
+                height="32" style="vertical-align: middle">
+            Enviar
+        </button>
+    </form>
+
+    <p>
+        <a href="#">Hola</a>
+    </p>
+    <!-- estilo diferente aplicado por el selector p+a, cambia el primer a precedido por una p -->
+    <a href="#hola" target="_blank">Hola fuera de p</a>
+    <!-- no aplica -->
+    <a>Prueba</a>
+
+    <div>
+        <!-- estilo diferente aplicado a las a que son hijos directos de p -->
+        <a>Hola</a>
+        <!-- no aplica porque es nieto, no es hijo directo -->
+        <!-- si fuera a cualquier hijo se pondría div a -->
+        <span><a>Hola2</a></span>
+    </div>
+</body>
+
+</html>
